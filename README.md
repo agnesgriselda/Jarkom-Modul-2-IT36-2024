@@ -1177,64 +1177,90 @@ service nginx restart
 ## Soal 19
 Karena probset sudah kehabisan ide masuk ke salah satu worker buatkan akses direktori listing yang mengarah ke resource worker2.
 
+###
+```
+apt-get update
+apt-get install nginx -y
+
+echo 'server {
+    listen 80;  
+    server_name sekianterimakasih.it36.com;
+
+    location / {
+        root /home;                     # Directory to list
+        autoindex on;                    # Enable directory listing
+        autoindex_exact_size off;        # Show sizes in human-readable format
+        autoindex_localtime on;          # Display local times
+    }
+
+    # pass PHP scripts to FastCGI server
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+    
+}' > /etc/nginx/sites-available/worker2
+
+ln -s /etc/nginx/sites-available/worker2 /etc/nginx/sites-enabled/
+rm /etc/nginx/sites-enabled/default
+
+service nginx restart
+```
+
+###Testing
+
+Menggunakan lynx http://10.81.2.3:8080 (belum diset sebagai default "80") 
+
+![use_ping](https://github.com/user-attachments/assets/fdd5299d-d1b2-479d-9566-7ac842ca0a5f)
+
 ## Soal 20
 Worker tersebut harus dapat di akses dengan sekiantterimakasih.xxxx.com dengan alias www.sekiantterimakasih.xxxx.com.
 
 ###
 ```
 #!/bin/bash
-service php7.0-fpm start
-service nginx start
 
-echo 'upstream solok {
-    server 10.81.2.4:8082; # IP Kotalingga
-    server 10.81.1.5:8083; # IP Bedahulu
-    server 10.81.1.4:8084; # IP Tanjungkulai
-}
+apt-get update
+apt-get install bind9 -y
 
-server {
-  listen 31400;
-  server_name solok.it36.com;
+mkdir /etc/bind/jarkom
 
-  location / {
-    proxy_pass http://solok;
-  }
-}
+echo 'zone "sekianterimakasih.it36.com" {
+    type master;
+    file "/etc/bind/jarkom/sekianterimakasih.it36.com";
+};' > /etc/bind/named.conf.local
 
-server {
-  listen 4697;
-  server_name solok.it36.com;
+cp /etc/bind/db.local /etc/bind/jarkom/sekianterimakasih.it36.com
 
-  location / {
-    proxy_pass http://solok;
-  }
-}
+echo '
+;
+; BIND data file for sekianterimakasih.it36.com
+;
+$TTL    604800
+@       IN      SOA     sekianterimakasih.it36.com. root.sekianterimakasih.it36.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      sekianterimakasih.it36.com.
+@       IN      A       10.81.2.3     ; IP for the worker node (Anusapati)
+@       IN      AAAA    ::1
+www     IN      CNAME   sekianterimakasih.it36.com.' > /etc/bind/jarkom/sekianterimakasih.it36.com
 
-server {
-  listen 8082;
-  listen 8083;
-  listen 8084;
-  server_name 10.81.3.2;
-
-  return 404;
-}
-server {
-    listen 80;
-    server_name sekianterimakasih.it36.com www.sekianterimakasih.it36.com;
-
-    location / {
-        autoindex on;
-        proxy_pass http://solok;
-    }
-}' > /etc/nginx/sites-available/jarkom
-
-ln -s /etc/nginx/sites-available/jarkom /etc/nginx/sites-enabled
-service nginx restart
+service bind9 restart
 ```
 
 ### Testing
 
+![cli](https://github.com/user-attachments/assets/22b2db11-c934-4ee3-be67-381f44fbee3b)
 
+![kelar](https://github.com/user-attachments/assets/9e155544-86ec-4a4a-9f25-1cb0e83f0112)
 
 
 
