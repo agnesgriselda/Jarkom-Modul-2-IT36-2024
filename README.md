@@ -1010,12 +1010,10 @@ Algoritma: Round-Robin
 
 ![htop_Tanjungkulai](https://github.com/user-attachments/assets/e43625db-f82c-40c7-a50d-27382758220f)
 
-
+![mulyono](https://github.com/user-attachments/assets/660e02a8-d114-461f-8512-ac7b883b2e5a)
 
 ## Soal 16
 Karena dirasa kurang aman dari brainrot karena masih memakai IP, markas ingin akses ke Solok memakai solok.xxxx.com dengan alias www.solok.xxxx.com (sesuai web server terbaik hasil analisis kalian).
-
-![mulyono](https://github.com/user-attachments/assets/660e02a8-d114-461f-8512-ac7b883b2e5a)
 
 ### 
 
