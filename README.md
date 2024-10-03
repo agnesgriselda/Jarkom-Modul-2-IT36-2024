@@ -1000,6 +1000,8 @@ Markas pusat meminta laporan hasil benchmark dengan menggunakan apache benchmark
 ###
 ### Testing
 
+Algoritma: Round-Robin
+
 ![ab_Bedahulu](https://github.com/user-attachments/assets/3896eb6c-e5b3-4f05-a345-75193dfc067f)
 
 ![ab_Tanjungkulai](https://github.com/user-attachments/assets/8a5bd67f-2652-44d6-8f9e-88d8734f5e8d)
@@ -1008,8 +1010,12 @@ Markas pusat meminta laporan hasil benchmark dengan menggunakan apache benchmark
 
 ![htop_Tanjungkulai](https://github.com/user-attachments/assets/e43625db-f82c-40c7-a50d-27382758220f)
 
+
+
 ## Soal 16
 Karena dirasa kurang aman dari brainrot karena masih memakai IP, markas ingin akses ke Solok memakai solok.xxxx.com dengan alias www.solok.xxxx.com (sesuai web server terbaik hasil analisis kalian).
+
+![mulyono](https://github.com/user-attachments/assets/660e02a8-d114-461f-8512-ac7b883b2e5a)
 
 ### 
 
