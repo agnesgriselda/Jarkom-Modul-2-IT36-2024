@@ -1015,7 +1015,7 @@ Algoritma: Round-Robin
 ## Soal 16
 Karena dirasa kurang aman dari brainrot karena masih memakai IP, markas ingin akses ke Solok memakai solok.xxxx.com dengan alias www.solok.xxxx.com (sesuai web server terbaik hasil analisis kalian).
 
-### 
+### Sriwijaya
 
 ```
 #!/bin/bash
@@ -1051,7 +1051,7 @@ service bind9 restart
 ## Soal 17
 Agar aman, buatlah konfigurasi agar solok.xxx.com hanya dapat diakses melalui port sebesar π x 10^4 = (phi nya desimal) dan 2000 + 2000 log 10 (10) +700 - π = ?.
 
-###
+### Solok
 ```
 #!/bin/bash
 service php7.0-fpm start
@@ -1105,7 +1105,7 @@ service nginx restart
 ## Soal 18
 Apa bila ada yang mencoba mengakses IP solok akan secara otomatis dialihkan ke www.solok.xxxx.com.
 
-### 
+### Solok
 ```
 #!/bin/bash
 service php7.0-fpm start
@@ -1177,7 +1177,7 @@ service nginx restart
 ## Soal 19
 Karena probset sudah kehabisan ide masuk ke salah satu worker buatkan akses direktori listing yang mengarah ke resource worker2.
 
-###
+### Anusapati (Salah satu worker)
 ```
 apt-get update
 apt-get install nginx -y
@@ -1220,7 +1220,7 @@ Menggunakan lynx http://10.81.2.3:8080 (belum diset sebagai default "80")
 ## Soal 20
 Worker tersebut harus dapat di akses dengan sekiantterimakasih.xxxx.com dengan alias www.sekiantterimakasih.xxxx.com.
 
-###
+### Sriwijaya
 ```
 #!/bin/bash
 
