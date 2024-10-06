@@ -1177,7 +1177,7 @@ service nginx restart
 ## Soal 19
 Karena probset sudah kehabisan ide masuk ke salah satu worker buatkan akses direktori listing yang mengarah ke resource worker2.
 
-### Anusapati (Salah satu worker)
+### Kotalingga (Salah satu worker)
 ```
 apt-get update
 apt-get install nginx -y
@@ -1213,7 +1213,7 @@ service nginx restart
 
 ###Testing
 
-Menggunakan lynx http://10.81.2.3:8080 (belum diset sebagai default "80") 
+Menggunakan lynx http://10.81.2.4 
 
 ![use_ping](https://github.com/user-attachments/assets/fdd5299d-d1b2-479d-9566-7ac842ca0a5f)
 
@@ -1249,7 +1249,7 @@ $TTL    604800
                          604800 )       ; Negative Cache TTL
 ;
 @       IN      NS      sekianterimakasih.it36.com.
-@       IN      A       10.81.2.3     ; IP for the worker node (Anusapati)
+@       IN      A       10.81.2.4     ; IP for the worker node (Kotalingga)
 @       IN      AAAA    ::1
 www     IN      CNAME   sekianterimakasih.it36.com.' > /etc/bind/jarkom/sekianterimakasih.it36.com
 
