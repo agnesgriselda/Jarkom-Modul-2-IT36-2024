@@ -4,7 +4,6 @@
 
 ## Topologi
 ![Screenshot 2024-10-01 005906](https://github.com/user-attachments/assets/175b87a0-f6e8-40ea-95c3-c48d6ea81f78)
-![Screenshot 2024-10-21 191835](https://github.com/user-attachments/assets/e6780704-ccde-433f-a80a-bed814dad746)
 
 ## Setup
 ### Nusantara (Router)
